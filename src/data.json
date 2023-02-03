@@ -1,0 +1,481 @@
+{
+  "appetizers":[
+    {
+      "item_num": "a1",
+      "name": "Spring Roll (2)",
+      "price": "2.99"
+    },
+    {
+      "item_num": "a2",
+      "name": "Egg Roll (2)",
+      "price": "2.99"
+    },
+    {
+      "item_num": "a3",
+      "name": "Edamame",
+      "price": "4.99"
+    },
+    {
+      "item_num": "a4",
+      "name": "Carb Rangoon (6)",
+      "price": "4.99"
+    },
+    {
+      "item_num": "a5",
+      "name": "Chicken Teriyaki (4)",
+      "price": "5.99"
+    },
+    {
+      "item_num": "a6",
+      "name": "Gyoza (6)",
+      "price": "5.99"
+    },
+    {
+      "item_num": "a7",
+      "name": "Fried Shrimp (12)",
+      "price": "7.99"
+    },
+    {
+      "item_num": "a8",
+      "name": "French Fries",
+      "price": "3.99"
+    },
+    {
+      "item_num": "a9",
+      "name": "Chicken Nuggets (10)",
+      "price": "6.99"
+    }
+  ],
+
+  "soups_salads":[
+    {
+      "item_num": "b1",
+      "name": "Onion Soup",
+      "price": "2.99"
+    },
+    {
+      "item_num": "b2",
+      "name": "Miso Soup",
+      "price": "2.99"
+    },
+    {
+      "item_num": "b3",
+      "name": "House Salad",
+      "price": "2.99"
+    },
+    {
+      "item_num": "b4",
+      "name": "Seaweed Salad",
+      "price": "5.99"
+    }
+  ],
+  "bakeRice":[
+    {
+      "item_num": "b5",
+      "name": "Vegetable Baked Rice",
+      "price": "11.50"
+    },
+    {
+      "item_num": "b6",
+      "name": "Chicken Baked Rice",
+      "price": "11.50"
+    },
+    {
+      "item_num": "b7",
+      "name": "Shrimp Baked Rice",
+      "price": "11.50"
+    },
+    {
+      "item_num": "b8",
+      "name": "Bacon Baked Rice",
+      "price": "11.50"
+    },
+    {
+      "item_num": "b9",
+      "name": "Choice of Two",
+      "price": "13.99"
+    }
+  ],
+  "chineseDinner":[
+    {
+      "item_num": "c1",
+      "name": "Vegetable Fried Rice",
+      "price": "8.99"
+    },
+    {
+      "item_num": "c2",
+      "name": "Chicken Fried Rice",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c3",
+      "name": "Shrimp Fried Rice",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c4",
+      "name": "Beef Fried Rice",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c5",
+      "name": "Vegetable Lo Mein",
+      "price": "8.99"
+    },
+    {
+      "item_num": "c6",
+      "name": "Chicken Lo Mein",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c7",
+      "name": "Shrimp Lo Mein",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c8",
+      "name": "Beef Lo Mein",
+      "price": "9.55"
+    },
+    {
+      "item_num": "c9",
+      "name": "Lo Mein or Fried Rice (w. 2 protein)",
+      "price": "12.25"
+    },
+    {
+      "item_num": "c10",
+      "name": "Sweat & Sour Chicken",
+      "price": "10.99"
+    },
+    {
+      "item_num": "c11",
+      "name": "Sesame Chicken",
+      "price": "11.95"
+    },
+    {
+      "item_num": "c12",
+      "name": "General Tso's Chicken",
+      "price": "11.95"
+    },
+    {
+      "item_num": "c13",
+      "name": "Orange Chicken",
+      "price": "11.99"
+    }
+  ],
+  "hibachiDinner":[
+    {
+      "item_num": "h1",
+      "name": "Hibachi Vegetable",
+      "price": "10.99"
+    },
+    {
+      "item_num": "h2",
+      "name": "Hibachi Chicken",
+      "price": "13.99"
+    },
+    {
+      "item_num": "h3",
+      "name": "Hibachi Steak",
+      "price": "14.99"
+    },
+    {
+      "item_num": "h4",
+      "name": "Hibachi Shrimp",
+      "price": "14.99"
+    },
+    {
+      "item_num": "h5",
+      "name": "Hibachi Scallop",
+      "price": "16.99"
+    },
+    {
+      "item_num": "h6",
+      "name": "Hibachi Salmon",
+      "price": "16.99"
+    },
+    {
+      "item_num": "h7",
+      "name": "Choice of Two",
+      "price": "17.99"
+    }
+  ],
+  "specilRoll":[
+    {
+      "item_num": "r13",
+      "name": "Dragon Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r14",
+      "name": "Pink Lady Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r15",
+      "name": "Evansville Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r16",
+      "name": "Rainbow Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r17",
+      "name": "Fancy Tuna Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r18",
+      "name": "King's Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r19",
+      "name": "Spicy Lover Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r20",
+      "name": "Angel Roll",
+      "price": "10.99"
+    },
+    {
+      "item_num": "r21",
+      "name": "Yummy Roll",
+      "price": "11.99"
+    },
+    {
+      "item_num": "r22",
+      "name": "Lin's Roll",
+      "price": "13.99"
+    },
+    {
+      "item_num": "r23",
+      "name": "Hot Summer Roll",
+      "price": "14.99"
+    }
+  ],
+  "sushi_sashimi":[
+    {
+      "item_num": "s1",
+      "name": "Crab Meat",
+      "price": "5.25"
+    },
+    {
+      "item_num": "s2",
+      "name": "Cooked Egg",
+      "price": "5.25"
+    },
+    {
+      "item_num": "s3",
+      "name": "Shrimp",
+      "price": "5.99"
+    },
+    {
+      "item_num": "s4",
+      "name": "Salmon",
+      "price": "5.99"
+    },
+    {
+      "item_num": "s5",
+      "name": "Tuna",
+      "price": "5.99"
+    },
+    {
+      "item_num": "s6",
+      "name": "White Tuna",
+      "price": "5.99"
+    },
+    {
+      "item_num": "s6",
+      "name": "Eel",
+      "price": "6.99"
+    }
+  ],
+  "sushi_combo":[
+    {
+      "item_num": "s8",
+      "name": "5 pcs of Sushi & 1 Classic Roll",
+      "price": "13.99"
+    },
+    {
+      "item_num": "s9",
+      "name": "2 pcs of Sushi & 2 Classic Roll",
+      "price": "12.99"
+    },
+    {
+      "item_num": "s10",
+      "name": "Chirashi",
+      "price": "15.99"
+    },
+    {
+      "item_num": "s11",
+      "name": "8 pcs of Sushi & 1 Classic Roll",
+      "price": "15.99"
+    },
+    {
+      "item_num": "s12",
+      "name": "7 Sushi 7 Sashimi & 1 Classic Roll",
+      "price": "23.99"
+    }
+  ],
+  "classicRolls":[
+    {
+      "item_num": "r1",
+      "name": "Cucumber or Avocado Roll",
+      "price": "5.99"
+    },
+    {
+      "item_num": "r2",
+      "name": "Carb Meat Roll",
+      "price": "5.99"
+    },
+    {
+      "item_num": "r3",
+      "name": "Salmon Roll",
+      "price": "5.99"
+    },
+    {
+      "item_num": "r4",
+      "name": "Tuna Roll",
+      "price": "5.99"
+    },
+    {
+      "item_num": "r5",
+      "name": "White Tuna Roll",
+      "price": "5.99"
+    },
+    {
+      "item_num": "r6",
+      "name": "Spicy Tuna Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r7",
+      "name": "Spicy Salmon Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r8",
+      "name": "Spicy Crab Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r9",
+      "name": "Vegetarian Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r10",
+      "name": "California Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r11",
+      "name": "Philadelphia Roll",
+      "price": "6.99"
+    },
+    {
+      "item_num": "r12",
+      "name": "Cream Cheese Tuna Roll",
+      "price": "6.99"
+    }
+  ],
+  "lunchSpecil_hibachi":[
+    {
+      "item_num": "L1",
+      "name": "Hibachi Vegetable",
+      "price": "8.99"
+    },
+    {
+      "item_num": "L2",
+      "name": "Hibachi Chicken",
+      "price": "9.99"
+    },
+    {
+      "item_num": "L3",
+      "name": "Hibachi Steak",
+      "price": "10.99"
+    },
+    {
+      "item_num": "L4",
+      "name": "Hibachi Shrimp",
+      "price": "10.99"
+    },
+    {
+      "item_num": "L5",
+      "name": "Hibachi Salmon",
+      "price": "12.99"
+    },
+    {
+      "item_num": "L6",
+      "name": "Hibachi Scallop",
+      "price": "12.99"
+    },
+    {
+      "item_num": "L7",
+      "name": "Choice of Two",
+      "price": "15.99"
+    }
+  ],
+  "lunchSpecil_chinese":[
+    {
+      "item_num": "L8",
+      "name": "Vegetable Lo Mein",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L9",
+      "name": "Chicken Lo Mein",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L10",
+      "name": "Shirmp Lo Mein",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L11",
+      "name": "Beef Lo Mein",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L12",
+      "name": "Sweat & Sour Chicken",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L13",
+      "name": "General Tso's Chicken",
+      "price": "8.49"
+    },
+    {
+      "item_num": "L14",
+      "name": "Sesame Chicken",
+      "price": "8.49"
+    }
+  ],
+  "categories":[
+    "Appetizers",
+    "Soups & Salads",
+    "Baked Rice",
+    "Chinese Dinner",
+    "Hibachi Dinner",
+    "Specil Roll",
+    "Sushi or Sashimi",
+    "Sushi Combination",
+    "Classic Rolls"
+  ],
+  "side":[
+    {
+      "name": "$2 extra for scallop or salmon",
+      "price": "2.00"
+    },
+    {
+      "name": "$2 with fried rice or french fries",
+      "price": "2.00"
+    }
+  ]
+}
