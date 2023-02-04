@@ -13,7 +13,6 @@ const Lunch = ({setCategory, setActiveItems, setActiveTab}) => {
         case "Chinese Entrees":
           setActiveItems(data.lunchSpecil_chinese);
         break;
-      
         default:
           setActiveItems(null);
         break;

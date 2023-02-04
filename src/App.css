@@ -72,7 +72,8 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
 }
-.itemName:hover, .itemName:active{
+
+.itemName:hover{
   transform: translateY(-3px);
   box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
   background:#F8F8F8;
@@ -150,6 +151,11 @@ td {
   text-align: start; 
   vertical-align: middle;
   padding: 0.5rem 1.5rem !important;
+  font-weight: 600;
+}
+td > div {
+  font-weight: 500;
+
 }
 
 .preSubDiv, .totalubDiv {
@@ -176,7 +182,7 @@ td {
 }
 .tableDiv {
   height: 50vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .addItem, .removeItem {
@@ -198,6 +204,8 @@ td {
 
 .qty {
   margin: 0 .5rem;
+  min-width: 25px;
+  text-align: center;
 }
 .addItem:hover, .removeItem:hover {
   color: #EEEEEE;
@@ -222,7 +230,11 @@ td {
   --bs-btn-disabled-border-color: #A90A2F;
   --bs-gradient: none;
   transition: 0.3s;
-
+  min-height: 3.5rem;
+  font-size: 1.25rem;
+}
+.curRow {
+  background-color: red;
 }
 
 .btn-outline-danger:hover {
@@ -236,5 +248,33 @@ td {
   .totalFooter {
     margin: 1rem;
     padding: 1rem .5rem !important;
+  }
+}
+@media (hover: hover) {
+  .icon:hover {
+    scale: 1.1;
+    color: #F0C42D;
+    font-weight: 900;
+  }
+  .activeM:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .itemName:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+    background:#F8F8F8;
+  }
+  .addItem:hover, .removeItem:hover {
+    color: #EEEEEE;
+    border: none;
+    background-color: #A90A2F;
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  .btn-outline-danger:hover {
+    background-color: #A90A2F;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
   }
 }

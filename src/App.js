@@ -6,7 +6,7 @@ import Main from './components/Tabs/Main';
 import Lunch from './components/Tabs/Lunch';
 import Add from './components/Tabs/Add';
 import CurrentOrder from './components/Settle/CurrentOrder';
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -15,6 +15,13 @@ function App() {
 const [ActiveTab, setActiveTab] = useState('Main');
 const [Category, setCategory] = useState(null);
 const [activeItems, setActiveItems] = useState(null);
+const [curOrder, setCurOrder] = useState(null);
+const [subTotal, setSubTotal] = useState(0);
+
+useEffect(() => {
+  setCurOrder(JSON.parse(localStorage.getItem('curOrder')))
+  setSubTotal(JSON.parse(localStorage.getItem('OrderSubTotal')))
+}, []);
 
   return (
     <div className="App container-fluid">
@@ -40,6 +47,7 @@ const [activeItems, setActiveItems] = useState(null);
               setCategory = {setCategory}
               setActiveItems={setActiveItems}
               setActiveTab={setActiveTab}
+              curOrder = {curOrder}
             />
           }
           { ActiveTab === "Add" && Category === null && 
@@ -47,6 +55,7 @@ const [activeItems, setActiveItems] = useState(null);
               setCategory = {setCategory}
               setActiveItems={setActiveItems}
               setActiveTab={setActiveTab}
+              curOrder = {curOrder}
             />
           }
 
@@ -57,13 +66,21 @@ const [activeItems, setActiveItems] = useState(null);
             ActiveTab={ActiveTab}
             setActiveTab={setActiveTab}
             setCategory = {setCategory}
+            setCurOrder={setCurOrder}
+            curOrder = {curOrder}
+            setSubTotal={setSubTotal}
           />
         }
         </div>
 
         <div className="col-4 totalDiv">
           <h1>Current Order</h1>
-          <CurrentOrder />
+          <CurrentOrder 
+            curOrder = {curOrder}
+            setCurOrder={setCurOrder}
+            setSubTotal={setSubTotal}
+            subTotal={subTotal}
+          />
         </div>
 
       </div>
