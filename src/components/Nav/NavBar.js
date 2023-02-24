@@ -29,19 +29,22 @@ const NavBar = ({ ActiveTab, setActiveTab, setCategory}) => {
         <img src={lunchIcon} alt="logo" />
         <span>LUNCH</span>
       </div>
+
       <div className={`icon  ${ActiveTab === "Drinks" ? "icon_active" : ""}`}
+
        onClick={() => {
         tabClicked("Drinks")
       }}>
         <img src={drinkIcon} alt="logo" />
         <span>DRINKS</span>
       </div>
-      <div className={`icon  ${ActiveTab === "Add" ? "icon_active" : ""}`}
+
+      <div className={`icon  ${ActiveTab === "Others" ? "icon_active" : ""}`}
        onClick={() => {
-        tabClicked("Add")
+        tabClicked("Others")
       }}>
         <img src={extraIcon} alt="logo" />
-        <span>ADD</span>
+        <span>OTHERS</span>
       </div>
     </>
   );

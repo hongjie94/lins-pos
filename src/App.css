@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,10 +13,27 @@ body {
 
 }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 32px;
+}
+
 .App {
   color: #ffffff;
 }
-
+.menuItem {
+  height: 100vh;
+  overflow-y: auto;
+}
 .leftNav, .menuItem, .totalDiv {
   min-height: 100vh;
 } 
@@ -126,7 +147,7 @@ body {
 .totalDiv {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   height: auto;
@@ -142,16 +163,24 @@ body {
   justify-content: space-between;
   background-color: #ffffff;
   min-height: 80vh;
-  padding: 1rem 0;
   width: 100%;
   border-radius: 5px;
 }
-
+.withWr, .choices {
+  color: #a90a2f;
+  font-weight: 600;
+  display: block;
+  font-size: 17px;
+}
+tr:hover {
+  cursor: pointer;
+} 
 td {
+  font-size: 17px;
   text-align: start; 
   vertical-align: middle;
   padding: 0.5rem 1.5rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 td > div {
   font-weight: 500;
@@ -188,10 +217,10 @@ td > div {
 .addItem, .removeItem {
   font-family: monospace;
   border: 1px solid black;
-  padding: .09em .75rem;;
-  max-width: 35px;
-  max-height: 35px;;
-  border-radius: 32px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  font-weight: 500;
   text-align: center;
   margin: 0;
   cursor: pointer;
@@ -199,7 +228,7 @@ td > div {
   justify-content: center;
   align-items: center;
   transition: 0.3s;
-
+  border-radius: 100%;
 }
 
 .qty {
@@ -207,13 +236,23 @@ td > div {
   min-width: 25px;
   text-align: center;
 }
-.addItem:hover, .removeItem:hover {
+.addItem:active, .removeItem:active, .addItem:hover, .removeItem:hover  {
   color: #EEEEEE;
   border: none;
   background-color: #A90A2F;
   box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+
+.ModalFooter {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.ModalBtnDiv {
+  display: flex;
+}
 .btn-outline-danger {
   --bs-btn-color: #A90A2F;
   --bs-btn-border-color: #A90A2F;
@@ -232,17 +271,40 @@ td > div {
   transition: 0.3s;
   min-height: 3.5rem;
   font-size: 1.25rem;
+  min-width: 8rem !important;
+  max-height: 4rem !important;
+}
+
+.form-select-lg {
+  min-width: 8rem !important;
+  max-height: 4rem !important;
 }
 .curRow {
   background-color: red;
 }
 
-.btn-outline-danger:hover {
+.btn-outline-danger:active {
   background-color: #A90A2F;
   transform: translateY(-3px);
   box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+.modal-content {
+  margin-top: 15vh !important;
+  min-width: 60vh !important;
+  min-height: 36vh !important;
+}
+
+
+.form-check {
+    margin-bottom: 2rem !important;
+    font-size: 1.5rem !important;
+}
+
+.form-check-input:checked {
+  background-color: #A90A2F;
+  border-color: #A90A2F;
+}
 /*********** Responsive design ***********/
 @media(max-width:1300px){
   .totalFooter {
@@ -250,31 +312,95 @@ td > div {
     padding: 1rem .5rem !important;
   }
 }
-@media (hover: hover) {
-  .icon:hover {
-    scale: 1.1;
-    color: #F0C42D;
-    font-weight: 900;
-  }
-  .activeM:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
-  }
 
-  .itemName:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
-    background:#F8F8F8;
+@media(max-width:1400px){
+  .leftNav {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
   }
-  .addItem:hover, .removeItem:hover {
-    color: #EEEEEE;
-    border: none;
-    background-color: #A90A2F;
-    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+  .icon {
+    padding: 2em;
+    margin: 0.25rem auto;
+    width: 100%;
   }
-  .btn-outline-danger:hover {
-    background-color: #A90A2F;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+  .icon > img {
+    max-width: 32px !important;
   }
+  .itemName > span{
+    font-size: .85rem !important
+  }
+  .menuCat {
+    font-size: 1.75rem;
+  }
+  .logo > img {
+    padding-top: 1rem;
+  }
+  
+  .itemName > h6 {
+    letter-spacing: 2px;
+    font-size: 1rem; 
+  }   
+  .withWr, .choices {
+    font-size: 13px;
+  }
+  .totalDiv {
+    padding: 1rem;
+    height: 100vh;
+    height: auto;
+  }
+  .totalDiv> h1 {
+    margin-bottom: 1.5rem;
+  } 
+
+  td {
+    padding: 0.5rem !important;
+    font-weight: 500;
+    font-size: .8rem;
+  }
+  .itemNumWrap{
+    font-size: 1rem !important;
+  }
+  tr > td:first-child {
+    padding-left: 12px !important;
+  }
+  tr > td:last-child {
+    padding-right: 12px !important;
+  }
+  .totalFooter {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .qty {
+    min-width: 20px;
+    max-width: 20px;
+    margin: 0 .25rem;
+  }
+  .totalBox {
+    padding-bottom: 0.85rem;
+    padding-top: 0;
+  }
+}
+
+
+@media(max-width:1200px){
+  .addItem, .removeItem {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media(max-width:900px){
+  .totalDiv{
+    height: auto;
+    min-height: 100vh;
+  }
+ .leftNav {
+  margin: 0;
+  padding: 0;
+ }
+ icon>img {
+  max-width: 22px!important;
+}
 }
