@@ -1,7 +1,6 @@
 
 import NavBar from './components/Nav/NavBar'
 import MenuItems from './components/Menu/MenuItems';
-
 import Main from './components/Tabs/Main';
 import Lunch from './components/Tabs/Lunch';
 import Drinks from './components/Tabs/Drinks';

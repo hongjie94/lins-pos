@@ -1,5 +1,12 @@
 import axios from 'axios';
+import drawerIcon from '../../imgs/icons/drawer.png';
+import {useState} from 'react';
+import Spinner from 'react-bootstrap/Spinner';
+
+
 const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax, ativeTableItem, setAtiveTableItem }) => {
+  const [loading, setloading] = useState(false);
+
 
   const orderDatePrefix = ()=> {
     const currentDate = new Date();
@@ -68,6 +75,26 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
     // alert("ok");
   };
 
+  const openDrawer = async () => {
+    setloading(true);
+    const baseUrl = 'http://localhost:8888/openCashDrawer';
+    const runCommand = async () =>{
+      await axios({
+        method: "POST",
+        url: baseUrl
+      }).then((res) => {
+        if(res.data === 'ok') {
+        }
+      }).catch((err)=> {
+        console.error(err);
+      });
+    };
+    runCommand();
+    setTimeout(() => {  
+      setloading(false);
+    }, 500);
+  }
+
   const updateQty = (index, order, method) => {
     if(method === "Add"){
       curOrder[index].qty = Number(order.qty + 1);
@@ -115,8 +142,13 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
 
   return (
     <>
+      {loading && <div className="LoadingPage">
+        <Spinner animation="border" role="status">
+        </Spinner>
+      </div>
+      }
       <h1 className="mt-0 mb-0">Current Order</h1>
-      <h1 className="mb-4">
+      <h1 className="mb-3">
         # {localStorage.getItem('orderNum') ? 
         (parseInt(localStorage.getItem('orderNum').substring(6)) + 1).toString().padStart(3,0) 
         : "001"}
@@ -301,21 +333,30 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
               ${subTotal && subTotal > 0 ? (Number(subTotal) + (Number(subTotal)*0.08)).toFixed(2) : "0.00"}
             </span>
           </div>
-          <button
-            type="button"
-            disabled={ !subTotal }
-            className="btn btn-outline-danger w-100 mt-2"
-            onClick={() => {
-              window.confirm('Settle Current Order ?') 
-              && settleOrder(
-                Number(subTotal).toFixed(2),
-                (Number(subTotal)*0.08).toFixed(2),  
-                (Number(subTotal) + (Number(subTotal)*0.08)).toFixed(2)
-              );
-            }}
-          >
-            <strong>Settle</strong>
-          </button>
+          <div className='curOrderBtns'>
+          <div className={`icon openDrawerIcon`}
+              onClick={() => {
+                openDrawer();
+              }}>
+              <img src={drawerIcon} alt="logo" />
+            </div>
+            <button
+              type="button"
+              disabled={ !subTotal }
+              className="btn btn-outline-danger mt-2 settleBtn"
+              onClick={() => {
+                window.confirm('Settle Current Order ?')
+                && settleOrder(
+                  Number(subTotal).toFixed(2),
+                  (Number(subTotal)*0.08).toFixed(2),
+                  (Number(subTotal) + (Number(subTotal)*0.08)).toFixed(2)
+                );
+              }}
+            >
+              <strong>Settle</strong>
+            </button>
+            
+          </div>
         </div>
       </div>
     </>

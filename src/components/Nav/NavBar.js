@@ -9,6 +9,7 @@ const NavBar = ({ ActiveTab, setActiveTab, setCategory}) => {
     setActiveTab(tab);
     setCategory(null);
   }
+
   return (
     <>
       <div className="logo">

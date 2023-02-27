@@ -12,6 +12,17 @@ body {
   background-color: #1B3040;
 
 }
+.LoadingPage {
+  position: absolute;
+  color: #A90A2F;
+  display: grid;
+  place-items: center;
+}
+
+.settleBtn {
+  margin-left: 2rem;
+  width: 100%;
+}
 
 ::-webkit-scrollbar {
   width: 0.5em;
@@ -200,7 +211,7 @@ td > div {
   background-color: #F8F8F8;
   color: black;
   border-radius: 5px;
-  margin: 2rem 2rem 0;
+  margin: 2rem;
 }
 .itemNumWrap {
   font-size: 1.25rem !important;
@@ -273,6 +284,22 @@ td > div {
   font-size: 1.25rem;
   min-width: 8rem !important;
   max-height: 4rem !important;
+}
+.curOrderBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.openDrawerIcon {
+  background-color: #A90A2F;
+  border-radius: 100%;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0;
+  padding: 1.75rem;
+}
+.openDrawerIcon  > img {
+  max-width: 30px !important;
 }
 
 .form-select-lg {
@@ -348,6 +375,7 @@ td > div {
     padding: 1rem;
     height: 100vh;
     height: auto;
+    position: relative;
   }
   .totalDiv> h1 {
     margin-bottom: 1.5rem;
@@ -388,6 +416,9 @@ td > div {
     width: 30px;
     height: 30px;
     font-size: 20px;
+  }
+  .icon {
+    padding: 1.75em;
   }
 }
 
