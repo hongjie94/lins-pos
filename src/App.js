@@ -29,15 +29,12 @@ useEffect(() => {
   return (
     <div className="App container-fluid">
       <div className="row">
-        
-        <nav className="col-1 leftNav py-4">
-          <NavBar 
-            setActiveTab={setActiveTab}
-            ActiveTab={ActiveTab}
-            setCategory = {setCategory}
-          />
-        </nav>
-
+        <NavBar 
+          setActiveTab={setActiveTab}
+          ActiveTab={ActiveTab}
+          setCategory = {setCategory}
+        />
+  
         <main className="col-7 menuItem py-4 scroller">
           { ActiveTab === "Main" && Category === null && 
             <Main 
@@ -88,19 +85,17 @@ useEffect(() => {
             />
           }
         </main>
-
-        <aside className="col-4 totalDiv">
-          <CurrentOrder 
-            curOrder = {curOrder}
-            setCurOrder={setCurOrder}
-            setSubTotal={setSubTotal}
-            subTotal={subTotal}
-            saleTax={saleTax}
-            setSaleTax={setSaleTax}
-            ativeTableItem ={ativeTableItem}
-            setAtiveTableItem ={setAtiveTableItem}
-          />
-        </aside>
+        
+        <CurrentOrder 
+          curOrder = {curOrder}
+          setCurOrder={setCurOrder}
+          setSubTotal={setSubTotal}
+          subTotal={subTotal}
+          saleTax={saleTax}
+          setSaleTax={setSaleTax}
+          ativeTableItem ={ativeTableItem}
+          setAtiveTableItem ={setAtiveTableItem}
+        />
       </div>
     </div>
   );

@@ -3,18 +3,10 @@ import drawerIcon from '../../imgs/icons/drawer.png';
 import {useState} from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 
-
 const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax, ativeTableItem, setAtiveTableItem }) => {
   const [loading, setloading] = useState(false);
 
-
-  const orderDatePrefix = ()=> {
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    const orderDate = (currentDate.getMonth() + 1).toString().padStart(2, '0') + currentDay.toString().padStart(2, '0') +  currentDate.getFullYear().toString().slice(-2);
-    return orderDate;
-  }
-
+  // Save to local storage
   const saveOrderNum = ()=> {
     const localStorageOrderNum = localStorage.getItem('orderNum');
     if(localStorageOrderNum) {
@@ -30,20 +22,30 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
       localStorage.setItem("orderNum", (orderDatePrefix() + 1));
     }
   }
- 
+
+  // Generate order date
+  const orderDatePrefix = ()=> {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const orderDate = (currentDate.getMonth() + 1).toString().padStart(2, '0') + currentDay.toString().padStart(2, '0') +  currentDate.getFullYear().toString().slice(-2);
+    return orderDate;
+  }
+
+  // Clear local storage
   const clearOrder = () => {
-     setCurOrder(null);
-     setSubTotal(0);
-     setSaleTax(0);
-     localStorage.removeItem("curOrder");
-     localStorage.removeItem("OrderSubTotal");
-     localStorage.removeItem("SaleTax");
+    setCurOrder(null);
+    setSubTotal(0);
+    setSaleTax(0);
+    localStorage.removeItem("curOrder");
+    localStorage.removeItem("OrderSubTotal");
+    localStorage.removeItem("SaleTax");
   };
 
+  // Send order to backend server
   const settleOrder = async (p_subTotal, p_tax, p_total) => {
-    // await axios
     // save order number
     saveOrderNum();
+
     // clear orders from state and local storage
     clearOrder();
     
@@ -75,6 +77,7 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
     // alert("ok");
   };
 
+  // Api call to backend server to open cash drawer
   const openDrawer = async () => {
     setloading(true);
     const baseUrl = 'http://localhost:8888/openCashDrawer';
@@ -95,6 +98,7 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
     }, 500);
   }
 
+  // Update order qty
   const updateQty = (index, order, method) => {
     if(method === "Add"){
       curOrder[index].qty = Number(order.qty + 1);
@@ -141,7 +145,7 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
   };
 
   return (
-    <>
+    <aside className="col-4 totalDiv">
       {loading && <div className="LoadingPage">
         <Spinner animation="border" role="status">
         </Spinner>
@@ -155,8 +159,7 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
       </h1>
       <div className="totalBox">
         <div className="tableDiv">
-          {/* Body */}
-          
+          {/* Body */}      
           <table className="table table-hover">
             <tbody>
               {curOrder &&
@@ -328,7 +331,6 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
           <hr />
           <div className="h3 totalubDiv">
             <span>Total</span>
-
             <span>
               ${subTotal && subTotal > 0 ? (Number(subTotal) + (Number(subTotal)*0.08)).toFixed(2) : "0.00"}
             </span>
@@ -353,13 +355,12 @@ const CurrentOrder = ({ curOrder, setCurOrder, subTotal, setSubTotal, setSaleTax
                 );
               }}
             >
-              <strong>Settle</strong>
+            <strong>Settle</strong>
             </button>
-            
           </div>
         </div>
       </div>
-    </>
+    </aside>
   );
 };
 export default CurrentOrder;

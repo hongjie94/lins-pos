@@ -11,10 +11,11 @@ const NavBar = ({ ActiveTab, setActiveTab, setCategory}) => {
   }
 
   return (
-    <>
+    <nav className="col-1 leftNav py-4">
       <div className="logo">
         <img src={logo} alt="logo" className="w-100" />
       </div>
+
       <div className={`icon mt-5 ${ActiveTab === "Main" ? "icon_active" : ""}`} 
       onClick={() => {
         tabClicked("Main")
@@ -23,6 +24,7 @@ const NavBar = ({ ActiveTab, setActiveTab, setCategory}) => {
         <img src={homeIcon} alt="logo" />
         <span>MAIN</span>
       </div>
+
       <div className={`icon ${ActiveTab === "Lunch" ? "icon_active" : ""}`}
        onClick={() => {
         tabClicked("Lunch")
@@ -47,7 +49,7 @@ const NavBar = ({ ActiveTab, setActiveTab, setCategory}) => {
         <img src={extraIcon} alt="logo" />
         <span>OTHERS</span>
       </div>
-    </>
+    </nav>
   );
 };
 export default NavBar;
